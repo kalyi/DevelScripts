@@ -184,8 +184,8 @@ def main():
             description='Checks and, if necessary, fixes license headers.')
     parser.add_argument('-l', '--language', choices = list(commentTokens.keys()),
             help='disable guessing and assume this language')
-    parser.add_argument('-n', '--newline', action="store_true", default=True,
-            help='insert an empty line between license header and code')
+    parser.add_argument('-n', '--no-newline', action="store_false", default=True, dest='newline',
+            help='do not insert an empty line between license header and code')
     parser.add_argument('header_file', metavar='<license header>',
             help='the license header')
     parser.add_argument('src_files', metavar='<file>', nargs='+',
